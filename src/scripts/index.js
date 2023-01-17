@@ -1,6 +1,8 @@
 import { loginUser, getUser, token } from "./requests.js"
 
-function modalLogin(){
+
+
+function login(){
      const modal= document.querySelector('.modal')
      const btn_open = document.querySelector('.btn_login')
      const btn_close = document.querySelector('.btn_closeModal')

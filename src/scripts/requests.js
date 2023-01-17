@@ -36,6 +36,7 @@ export async function getAllMyPets() {
     return petsJSON
 }
 
+
 export async function loginUser(data){
     const user = await fetch(`${baseURL}/session/login`, {
         method: "POST",
@@ -56,5 +57,43 @@ export async function loginUser(data){
     }
 
     return userLogin
+}
 
+export async function adopt(petId) {
+    const data = {
+        pet_id: petId
+    }
+
+    const pet = await fetch(`${baseURL}/adoptions`, {
+        method:"POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+
+    const petJSON = await pet.json()
+
+    if(!pet.ok) {
+        callToastify("Erro ao adotar o pet", red)
+    } else {
+        callToastify("Pet adotado com sucesso", green)
+    }
+
+    return petJSON
+}
+
+export async function deleteAccount() {
+    const account = await fetch(`${baseURL}/users/profile`, {
+        method: "DELETE",
+        headers: headers
+    })
+
+    const accountJSON = account.json()
+
+    if(!account.ok) {
+        callToastify("Houve um erro ao deletar a conta", red)
+    } else {
+        callToastify("Conta deletada", green)
+    }
+
+    return accountJSON
 }
