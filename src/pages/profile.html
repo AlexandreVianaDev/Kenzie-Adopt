@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
     <!-- JS -->
     <script type="module" src="../scripts/profile.js" defer></script>
     <!-- TOASTIFY -->
@@ -25,7 +32,7 @@
             <!-- PETS -->
 
             <section id="pets">
-                <button id="registerPet">Cadastrar novo pet</button>
+                <button id="registerPet" class="button-green">Cadastrar novo pet</button>
 
                 <ul id="cards__list">
                 </ul>
@@ -34,6 +41,14 @@
 
         </div>
     </main>
-    
+    <dialog class="modal">
+        <div class="modal__div">
+            <div class="box_top">
+                <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
+           </div>
+           <div id="modal__content"></div>
+           <div class="box_bottom"></div>
+        </div>
+   </dialog> 
 </body>
 </html>
