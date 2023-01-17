@@ -9,6 +9,8 @@
           <link rel="stylesheet" href="./src/styles/globalStyles.css">
           <link rel="stylesheet" href="./src/styles/index.css">
           <link rel="stylesheet" href="./src/styles/button.css">
+          <link rel="stylesheet" href="./src/styles/modal.css">
+          <link rel="stylesheet" href="./src/styles/input.css">
           <!-- CDN -->
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
@@ -28,7 +30,24 @@
                     <button class="btn_register">Register</button> 
                     <button class="btn_login">Login</button>
                </nav>
-          </header>          
+          </header>  
+          <dialog class="modal">
+               <div class="screen__login">
+                    <div class="box_top">
+                         <h1 class="btn_closeModal">X</h1>
+                    </div>
+                    <form class="form">
+                         <h1 class="logo" >Login</h1>
+                         <input id="email" type="email" autocomplete="email" placeholder="Seu e-mail" name="email">
+                         <input id="pass"  type="password" autocomplete="current-password" placeholder="Sua senha" name="password">
+                         <button class="btn_enter">Entrar</button>
+                         <h1 class="text">Não tem cadastro? <span class="register">Clique aqui</span> para se cadastrar.</h1>
+                    </form>
+                    <div class="box_bottom"></div>
+               </div>
+          </dialog>        
+          <footer class="footer_container">
+               <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
+          </footer>
      </body>
-
 </html>

@@ -17,6 +17,7 @@
      --font-title-2: 2.375rem; /* 38 pixels */
      --font-title-3: 1.75rem; /* 28 pixels */
      --font-title-4: 1.125rem; /* 18 pixels */
+     --font-text-0: .55rem;
      --font-text-1: 1rem; /* 16 pixels */
      --font-text-2: 0.875rem; /* 14 pixels */
      --font-text-3: 0.75rem; /* 12 pixels */
@@ -69,7 +70,7 @@ img {
      max-width: var(--container-1);
      margin: 0 auto;
 }
-   
+
    /* CONFIGURAÇÕES BASE DE TEXTO */
 body, button, input, textarea {
      font-family: var(--font-family-1);
