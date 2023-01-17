@@ -103,8 +103,8 @@ async function modalDeleteProfile() {
 
 // função de controle, só serve para chamar e organizar todas as funções que são chamadas assim que a página carrega
 function start () {
-    // renderAllMyPets()
-    modalDeleteProfile()
+    renderAllMyPets()
+    // modalDeleteProfile()
     // deleteProfile()
 }
 
