@@ -6,9 +6,7 @@
      --color-grey-1: #90A4AE;
      --color-grey-2: #EEEEEE;
      --color-white: #FFFFFF;
-   
-     --color-alert: #EA534A;
-     --color-sucess: #33CC66;
+     --color-green: #33CC66;
    
      --bg-color: #FFFFFF;
      --bg-button: #0d1114;
@@ -104,4 +102,22 @@ body, button, input, textarea {
      font-size: var(--font-text-2);
      font-weight: var(--font-weight-4);
      line-height: var(--line-heigth-4);
+}
+
+.button-purple {
+     border-radius: var(--radius-4);
+     background-color: var(--color-brand-1);
+     color: var(--color-white);
+     padding: 4px 16px;
+}
+
+.button-purple:hover, .button-green:hover {
+     opacity: 75%;
+}
+
+.button-green {
+     border-radius: var(--radius-4);
+     background-color: var(--color-green);
+     color: var(--color-white);
+     padding: 4px 16px;   
 }
