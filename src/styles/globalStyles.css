@@ -110,7 +110,7 @@ body, button, input, textarea {
      padding: 4px 16px;
 }
 
-.button-purple:hover {
+.button-purple:hover, .button-green:hover {
      opacity: 75%;
 }
 
