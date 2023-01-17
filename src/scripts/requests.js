@@ -32,3 +32,15 @@ export async function getAllMyPets() {
 
     return petsJSON
 }
+
+async function showPets(){
+    const petsNames = await fetch(`${baseURL}/pets`, {
+        method: "GET",
+        headers: headers
+    });
+
+
+
+    const main = document.querySelector('main');
+
+}
