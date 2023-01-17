@@ -7,6 +7,7 @@
      --color-grey-2: #EEEEEE;
      --color-white: #FFFFFF;
      --color-green: #33CC66;
+     --color-red: #EA534A;
    
      --bg-color: #FFFFFF;
      --bg-button: #0d1114;
@@ -54,9 +55,7 @@
      --container-1: 1200px;
      --container-2: 900px;
    
-     --font-family-1: Verdana, Geneva, Tahoma, sans-serif;
-     --font-family-2: Tahoma, sans-serif;
-     --font-family-3: Open Sans, sans-serif
+     --font-family-1: Open Sans, sans-serif
 }
    
  
@@ -76,11 +75,12 @@ body, button, input, textarea {
      line-height: var(--line-heigth-4);
 }
 
-/* H1 ou H2 */
+/* 24px weight 700 line height 26px */
 .title-1 {
-     font-size: var(--font-title-1);
+     font-size: var(--font-text-4); 
      font-weight: var(--font-weight-1);
-     line-height: var(--line-heigth-1);
+     line-height: var(--line-heigth-2);
+     color: var(--color-brand-1);
 }
 
 /* H2 ou H3 */
@@ -120,4 +120,17 @@ body, button, input, textarea {
      background-color: var(--color-green);
      color: var(--color-white);
      padding: 4px 16px;   
+}
+
+.button-white-red {
+     border-radius: var(--radius-4);
+     border: 1px solid var(--color-red);
+     color: var(--color-red);
+     background-color:  var(--color-white);
+     padding: 4px 16px
+}
+
+.button-white-red:hover {
+     color:var(--color-white);
+     background-color: var(--color-red);  
 }

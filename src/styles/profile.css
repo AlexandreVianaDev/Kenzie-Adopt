@@ -62,13 +62,6 @@
     width: fit-content;
 }
 
-
-/* 
-li > img e div
-div > ul > li (3) > spans (2 em cada)
-
-*/
-
 @media screen and (min-width: 420px) {
     #cards__list > li {
         gap: 36px;
