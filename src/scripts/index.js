@@ -1,6 +1,5 @@
-import { loginUser } from "./requests.js"
+import { loginUser, getUser, token } from "./requests.js"
 
-// adopt("10bce529-4ca6-4d56-8b5b-79afdfb2497d")
 
 
 function login(){
@@ -24,12 +23,48 @@ function login(){
                "password": `${pass.value}`
           }
           loginUser(data)
-     })
+          modal.close()
 
+     })
 }
 
-          
+async function checkUser(){
+     const  token  = await getUser()
+     if(token.length > 1){
+          console.log(token)
+          return true
+     }else{
+          console.log(token)
+          return false
+     }
+        
+}
 
+async function modButton(){
+     const buttons = document.querySelector('.buttons')
 
+     if(await checkUser()){
+          buttons.innerHTML = ''
+          let  btn_profile = document.createElement('button')
+          let btn_logout = document.createElement('button')
 
-login()
+          btn_profile.innerText = 'Perfil'
+          btn_logout.innerText = 'Logout'
+
+          btn_profile.classList.add('btn_profile')
+          btn_logout.classList.add('btn_logout')
+
+          buttons.append(btn_profile,btn_logout)
+          btn_profile.addEventListener('click',()=>{
+               window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html") 
+          })
+          btn_logout.addEventListener('click',()=>{
+               localStorage.clear()
+               window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+          })
+     }
+}
+
+checkUser()
+modalLogin()
+modButton()

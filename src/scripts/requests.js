@@ -13,8 +13,9 @@ export const headers = {
 export const red = "#CE4646"
 export const green = "#4BA036"
 
-function getUser(){
-    const user = localStorage.getItem('@KenziePets:tokenUser') || []
+export function getUser(){
+    const user = localStorage.getItem('@KenziePets:tokenUser') || {}
+    console.log(user)
     return user
 }
 
@@ -50,6 +51,9 @@ export async function loginUser(data){
     } else {
         callToastify("Sucess", green)
         localStorage.setItem('@KenziePets:tokenUser',`${userLogin.token}`)
+        setTimeout(()=>{
+            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html")
+        },1000)
     }
 
     return userLogin
