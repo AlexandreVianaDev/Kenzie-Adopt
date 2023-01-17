@@ -2,19 +2,21 @@ import { callToastify } from "./toastify.js"
 
 export const baseURL = "http://localhost:3333"
 
-// export const { token } = getUser()
 
-// token usado enquanto não tenho o token de login, substituir pelo token da sua maquina
-export const fakeToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzM5MDQxOTYsImV4cCI6MTY3NDUwODk5Niwic3ViIjoiZWYxM2YyYTEtOTBkNy00Y2Q1LWI2ZTAtNGUwM2NhOTU5MzE3In0.-9mrtW7eyMKDAKvNDGxvQkxxGZBoZW2AlVH0TlJDQDU"
+export const { token } = getUser()
 
 export const headers = {
     "Content-Type": "application/json",
-    // Authorization: `Bearer ${token}` // essa aqui é a forma ideal, a de baixo só estava usando o fakeToken pois nao tinha a função de login
-    Authorization: `Bearer ${fakeToken}`
+    Authorization: `Bearer ${token}` 
 }
 
 export const red = "#CE4646"
 export const green = "#4BA036"
+
+function getUser(){
+    const user = localStorage.getItem('@KenziePets:tokenUser') || []
+    return user
+}
 
 export async function getAllMyPets() {
     const pets = await fetch(`${baseURL}/pets/my_pets`, {
@@ -32,6 +34,25 @@ export async function getAllMyPets() {
 
     return petsJSON
 }
+export async function loginUser(data){
+    const user = await fetch(`${baseURL}/session/login`, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+
+    const userLogin = await user.json()
+   
+    if(!user.ok) {
+        callToastify("Failed", red)
+    } else {
+        callToastify("Sucess", green)
+        localStorage.setItem('@KenziePets:tokenUser',`${userLogin.token}`)
+    }
+
+    return userLogin
+
+}
 
 async function showPets(){
     const petsNames = await fetch(`${baseURL}/pets`, {
@@ -44,3 +65,5 @@ async function showPets(){
     const main = document.querySelector('main');
 
 }
+
+const teste = 12;

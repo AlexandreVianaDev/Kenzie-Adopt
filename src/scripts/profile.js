@@ -44,18 +44,22 @@ async function renderAllMyPets() {
         liAvailable.append(spanAvailable,spanAvailableValue)
 
         ulCardInfos.append(liName, liSpecie, liAvailable)
-        div.appendChild(ulCardInfos)
-        liItem.append(img,div)
-
-        ulCardList.appendChild(liItem)
 
         let updateBtn = document.createElement("button")
+        updateBtn.innerText = "Atualizar"
+        updateBtn.classList.add("button-purple")
         updateBtn.addEventListener("click", (event) => {
             event.preventDefault()
             console.log(event.target)
             // chama função que abre modal de atualizar pet
         })
+
+        div.append(ulCardInfos, updateBtn)
+        liItem.append(img,div)
+
+        ulCardList.appendChild(liItem)
     })
+    
 }
 
 // função de controle, só serve para chamar e organizar todas as funções que são chamadas assim que a página carrega
