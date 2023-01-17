@@ -1,10 +1,23 @@
 .header_container{
      width: 100vw; height: 10vh;
      padding: 0 3rem;
-     border: 1px solid var(--color-black);
+     border: 1px solid var(--color-grey-1);
      background-color: var(--color-white);
      display: flex;
      align-items: center;
      flex-direction: row;
      justify-content: space-between;
+}
+.buttons{
+     width: 20rem; height: 100%;
+     gap: 1.5rem;
+     padding: 0 1rem;
+     display: flex;
+     align-items: center;
+}
+.logo{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-title-3);
+     font-weight: var(--font-weight-1);
 }
