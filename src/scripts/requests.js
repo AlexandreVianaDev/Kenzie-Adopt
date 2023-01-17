@@ -32,3 +32,25 @@ export async function getAllMyPets() {
 
     return petsJSON
 }
+
+export async function adopt(petId) {
+    const data = {
+        pet_id: petId
+    }
+
+    const pet = await fetch(`${baseURL}/adoptions`, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+
+    const petJSON = await pet.json()
+
+    if(!pet.ok) {
+        callToastify("Erro ao adotar o pet", red)
+    } else {
+        callToastify("Pet adotado com sucesso", green)
+    }
+
+    return petJSON
+}
