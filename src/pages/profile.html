@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
+    <!-- JS -->
+    <script type="module" src="../scripts/profile.js" defer></script>
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <title>Perfil</title>
+</head>
+<body>
+    
+
+    <main>
+        <div class="container">
+            <!-- PERFIL -->
+
+            <section id="profile">
+
+            </section>
+
+            <!-- PETS -->
+
+            <section id="pets">
+                <button id="registerPet" class="button-green">Cadastrar novo pet</button>
+
+                <ul id="cards__list">
+                </ul>
+            </section>
+
+
+        </div>
+    </main>
+    <dialog class="modal">
+        <div class="modal__div">
+            <div class="box_top">
+                <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
+           </div>
+           <div id="modal__content"></div>
+           <div class="box_bottom"></div>
+        </div>
+   </dialog> 
+</body>
+</html>
