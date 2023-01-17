@@ -1,23 +1,86 @@
+/*
+
+
+.footer_container{
+     width: 100vw; height: 5vh;
+     padding: 0 3rem;
+     background-color: var(--color-brand-2);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: row;
+     position: absolute;
+     bottom: 0;
+}
+.footer_text{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-4);
+     line-height: 11px;
+} */
+
 .header_container{
      width: 100vw; height: 10vh;
-     padding: 0 3rem;
-     border: 1px solid var(--color-grey-1);
+     padding: 0 1rem;
      background-color: var(--color-white);
      display: flex;
      align-items: center;
      flex-direction: row;
      justify-content: space-between;
 }
-.buttons{
-     width: 20rem; height: 100%;
-     gap: 1.5rem;
-     padding: 0 1rem;
-     display: flex;
-     align-items: center;
-}
 .logo{
      color: var(--color-brand-1);
      font-family: var(--font-family-3);
      font-size: var(--font-title-3);
-     font-weight: var(--font-weight-1);
+     font-weight: var(--font-weight-2);
+     margin: 2rem 0;
+}
+.footer_container{
+     width: 100vw; height: 5vh;
+     padding: 0 1rem;
+     background-color: #F1EEF7;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: row;
+     position: absolute;
+     bottom: 0;
+}
+.footer_text{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-3);
+     font-weight: var(--font-weight-4);
+     line-height: 11px;
+} 
+.text{
+     margin: .5rem 0 0 -2rem;
+     color: var(--color-black);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-0);
+     font-weight: var(--font-weight-2);
+     line-height: 11px;
+}
+.register{
+     cursor: pointer;
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-0);
+     font-weight: var(--font-weight-2);
+     line-height: 11px;
+}
+
+@media screen and (min-width: 1000px) {
+     .header_container{
+          padding: 0 3rem;
+     }
+     .buttons{
+          width: 20rem; height: 100%;
+          gap: 1.5rem;
+          padding: 0 1rem;
+          display: flex;
+          align-items: center;
+     }
+     
 }
