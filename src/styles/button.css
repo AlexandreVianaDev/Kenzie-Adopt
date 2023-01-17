@@ -1,15 +1,7 @@
 .btn_register{
-     color: var(--color-brand-1);
-     height: 2rem;
-     padding: .25rem 1.5rem .25rem 1.5rem ;
-     border: 1px solid var(--color-brand-1);
-     border-radius: 1rem;
-     background-color: var(--color-white);
-     font-family: var(--font-family-3);
-     font-size: var(--font-text-1);
-     font-weight: var(--font-weight-2);
+     display: none;
 }
-.btn_login{
+.btn_login, .btn_logout{
      color: var(--color-white);
      height: 2rem;
      padding: .25rem 1.5rem .25rem 1.5rem ;
@@ -19,4 +11,39 @@
      font-family: var(--font-family-3);
      font-size: var(--font-text-1);
      font-weight: var(--font-weight-2);
+}
+.btn_closeModal{
+     cursor: pointer;
+     position: absolute;
+     right: 1.5rem; top: 1rem;
+     padding: .4rem .54rem;
+     color: var(--color-white);
+     border: 2px solid var(--color-white);
+     border-radius: 100%;
+}
+.btn_enter{
+     color: var(--color-white);
+     height: 2rem; width: 15rem;
+     padding: .25rem 1.5rem .25rem 1.5rem ;
+     border: 1px solid var(--color-brand-1);
+     border-radius: 1rem;
+     background-color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-2);
+}
+
+@media screen and (min-width: 1000px) {
+    .btn_register{
+          display: flex;
+          color: var(--color-brand-1);
+          height: 2rem;
+          padding: .25rem 1.5rem .25rem 1.5rem ;
+          border: 1px solid var(--color-brand-1);
+          border-radius: 1rem;
+          background-color: var(--color-white);
+          font-family: var(--font-family-3);
+          font-size: var(--font-text-1);
+          font-weight: var(--font-weight-2);
+    }
 }
