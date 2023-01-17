@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/globalStyles.css">
     <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
     <!-- JS -->
     <script type="module" src="../scripts/profile.js" defer></script>
     <!-- TOASTIFY -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
-
     <title>Perfil</title>
 </head>
 <body>
@@ -39,6 +41,14 @@
 
         </div>
     </main>
-    
+    <dialog class="modal">
+        <div class="modal__div">
+            <div class="box_top">
+                <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
+           </div>
+           <div id="modal__content"></div>
+           <div class="box_bottom"></div>
+        </div>
+   </dialog> 
 </body>
 </html>

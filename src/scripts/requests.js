@@ -52,5 +52,21 @@ export async function loginUser(data){
     }
 
     return userLogin
+}
 
+export async function deleteAccount() {
+    const account = await fetch(`${baseURL}/users/profile`, {
+        method: "DELETE",
+        headers: headers
+    })
+
+    const accountJSON = account.json()
+
+    if(!account.ok) {
+        callToastify("Houve um erro ao deletar a conta", red)
+    } else {
+        callToastify("Conta deletada", green)
+    }
+
+    return accountJSON
 }

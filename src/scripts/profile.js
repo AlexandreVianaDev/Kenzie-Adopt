@@ -1,4 +1,4 @@
-import { getAllMyPets } from "./requests.js"
+import { getAllMyPets, deleteAccount } from "./requests.js"
 
 async function renderAllMyPets() {
     const pets = await getAllMyPets()
@@ -62,9 +62,50 @@ async function renderAllMyPets() {
     
 }
 
+
+
+async function modalDeleteProfile() {
+    const modal = document.querySelector("dialog")
+    const modalContent = document.querySelector("#modal__content")
+
+    modalContent.classList.add("modal--delete")
+
+    const h2 = document.createElement("h2")
+    h2.classList.add("title-1")
+    h2.innerText = "Deseja mesmo deletar sua conta?"
+
+    const noDeleteBtn = document.createElement("button")
+    noDeleteBtn.classList.add("button-purple")
+    noDeleteBtn.innerText = "Não desejo deletar minha conta"
+    noDeleteBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        modal.close()
+    })
+
+    const deleteBtn = document.createElement("button")
+    deleteBtn.classList.add("button-white-red")
+    deleteBtn.innerText = "Quero deletar minha conta"
+    deleteBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        deleteAccount()
+    })
+
+    const closeModalBtn = document.querySelector(".btn_closeModal")
+    closeModalBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        modal.close()
+    })
+
+    modalContent.append(h2,noDeleteBtn,deleteBtn)
+
+    modal.showModal()
+}
+
 // função de controle, só serve para chamar e organizar todas as funções que são chamadas assim que a página carrega
 function start () {
-    renderAllMyPets()
+    // renderAllMyPets()
+    modalDeleteProfile()
+    // deleteProfile()
 }
 
 start ()
