@@ -24,6 +24,78 @@
     display: flex;
     flex-direction: row;
 }
+main > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+#profile > figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background: linear-gradient(
+        to top,
+        white 0%,
+        white 50%,
+        var(--color-brand-1) 50%,
+        var(--color-brand-1) 100%
+    );
+}
+
+#profile__img {
+    border-radius: var(--radius-100);
+    border: 3px solid var(--color-white);
+}
+
+#profile__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: 400px;
+    max-width: 90%;
+}
+
+#profile__infos > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    align-self: flex-start;
+}
+
+#profile__infos > ul > li {
+    display: flex;
+    gap: 8px;
+}
+
+#profile__infos > ul > li > span:nth-child(odd) {
+    color: var(--color-brand-1);
+    font-weight: var(--font-weight-1);
+}
+
+#profile__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+#profile__control > button {
+    max-width: fit-content;
+}
+
 #pets {
     max-width: 1010px;
 }
@@ -89,6 +161,9 @@
 }
 
 @media screen and (min-width: 420px) {
+    #profile__control {
+        flex-direction: row;
+    }
     #cards__list > li {
         gap: 36px;
     }

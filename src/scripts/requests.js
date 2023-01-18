@@ -3,7 +3,7 @@ import { callToastify } from "./toastify.js"
 export const baseURL = "http://localhost:3333"
 
 
-export const { token } = getUser()
+export const  token  = getUser()
 
 export const headers = {
     "Content-Type": "application/json",
@@ -15,7 +15,6 @@ export const green = "#4BA036"
 
 export function getUser(){
     const user = localStorage.getItem('@KenziePets:tokenUser') || {}
-    console.log(user)
     return user
 }
 
@@ -29,9 +28,7 @@ export async function getAllMyPets() {
 
     if(!pets.ok) {
         callToastify("Erro ao requisitar meus pets", red)
-    } else {
-        callToastify("Pets requisitados com sucesso", green)
-    }
+    } 
 
     return petsJSON
 }
@@ -118,4 +115,19 @@ export async function deleteAccount() {
     }
 
     return accountJSON
+}
+
+export async function getProfileInfos() {
+    const profile = await fetch(`${baseURL}/users/profile`, {
+        method: "GET",
+        headers:headers
+    })
+
+    const profileJSON = await profile.json()
+
+    if(!profile.ok) {
+        callToastify("Houve um erro ao carregar dados do usuário", red)
+    } 
+
+    return profileJSON
 }
