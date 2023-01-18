@@ -1,6 +1,17 @@
 import { loginUser, getUser, token, registerUser } from "./requests.js"
 
+export function logout(){
+     localStorage.clear()
+     window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+}
 
+
+function navForProfile(){
+     const button = document.querySelector('.btn_profile')
+     button.addEventListener('click',()=>{
+          location.href = '/src/pages/profile.html'
+     })
+}
 
 function modalLogin(){
      const modal= document.querySelector('.modal')
@@ -59,8 +70,36 @@ function modalLogin(){
           closeModal()
           ShowModal(modal)
           logInto()
+          // navForProfile()
+          redirectRegister()
      })   
      
+}
+
+function redirectLogin(){
+     const modal = document.querySelector('dialog')
+     const button = document.querySelector('.login')
+
+     const loginButton = document.querySelector('.btn_login')
+
+     button.addEventListener('click',(e)=>{
+          e.preventDefault()
+          modal.close()
+          loginButton.click()     
+     })
+}
+
+function redirectRegister(){
+     const modal = document.querySelector('dialog')
+     const button = document.querySelector('.register')
+
+     const loginButton = document.querySelector('.btn_register')
+
+     button.addEventListener('click',(e)=>{
+          e.preventDefault()
+          modal.close()
+          loginButton.click()     
+     })
 }
 
 function modalRegister(){
@@ -131,6 +170,7 @@ function modalRegister(){
           closeModal()
           ShowModal(modal)
           register()
+          redirectLogin()
           
      })
 
@@ -218,11 +258,11 @@ async function modButton(){
                window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html") 
           })
           btn_logout.addEventListener('click',()=>{
-               localStorage.clear()
-               window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+               logout()
           })
      }
 }
+
 
 
 

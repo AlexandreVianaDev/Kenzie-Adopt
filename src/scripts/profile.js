@@ -114,6 +114,8 @@ async function renderProfile() {
     emailSpan.innerText = `${email}`
     
     console.log(profile)
+    buttonLogout()
+    buttonHome()
 }
 
 // função de controle, só serve para chamar e organizar todas as funções que são chamadas assim que a página carrega
@@ -132,5 +134,23 @@ function acessControl(){
     else
     console.log('logado')
 }
+
+function buttonLogout(){
+    const button = document.querySelector('#btn_logout')
+
+    button.addEventListener('click',()=>{
+        localStorage.clear()
+        window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+    })
+}
+
+function buttonHome(){
+    const button = document.querySelector('#btn_home')
+
+    button.addEventListener('click',()=>{
+        window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+    })
+}
+// Vou construir uma função logout
 acessControl()
-start ()
+start()
