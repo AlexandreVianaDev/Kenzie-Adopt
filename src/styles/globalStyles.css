@@ -109,7 +109,22 @@ body, button, input, textarea {
      background-color: var(--color-brand-1);
      color: var(--color-white);
      padding: 4px 16px;
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-2);
 }
+
+.button-white{
+     border-radius: var(--radius-4);
+     background-color: var(--color-white);
+     border: 1px solid var(--color-brand-1);
+     color: var(--color-brand-1);
+     padding: 4px 16px;
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-2);
+}
+
 
 .button-purple:hover, .button-green:hover {
      opacity: 75%;
