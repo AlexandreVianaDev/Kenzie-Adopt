@@ -28,13 +28,11 @@ function modalLogin(){
      })
 }
 
-async function checkUser(){
+async function checkToken(){
      const  token  = await getUser()
      if(token.length > 1){
-          console.log(token)
           return true
      }else{
-          console.log(token)
           return false
      }
         
@@ -43,7 +41,7 @@ async function checkUser(){
 async function modButton(){
      const buttons = document.querySelector('.buttons')
 
-     if(await checkUser()){
+     if(await checkToken()){
           buttons.innerHTML = ''
           let  btn_profile = document.createElement('button')
           let btn_logout = document.createElement('button')
@@ -65,6 +63,16 @@ async function modButton(){
      }
 }
 
-checkUser()
+function acessControl(){
+     const token = localStorage.getItem('@KenziePets:tokenUser');
+
+     if(!token)
+         window.location.href = 'ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html';
+     else
+     console.log('logado')
+     // Aonde aplicar ?
+}
+
+checkToken()
 modalLogin()
 modButton()
