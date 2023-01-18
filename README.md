@@ -1,1 +1,1 @@
-# m2-projeto-em-equipe
+# NÃO REALIZAR PUSH E PULL PARA ESSA BRANCH
