@@ -6,12 +6,6 @@ export function logout(){
 }
 
 
-function navForProfile(){
-     const button = document.querySelector('.btn_profile')
-     button.addEventListener('click',()=>{
-          location.href = '/src/pages/profile.html'
-     })
-}
 
 function modalLogin(){
      const modal= document.querySelector('.modal')
@@ -156,7 +150,7 @@ function modalRegister(){
           input_4.setAttribute('placeholder','Seu avatar')
 
           h1_1.innerText = 'Cadastrar'
-          button_2.innerText = 'Entrar'
+          button_2.innerText = 'Cadastrar'
           h1_2.innerHTML = `Já tem cadastro?  <span class="login">Clique aqui</span>.`
 
           div_1.append(div_2, form, div_3)

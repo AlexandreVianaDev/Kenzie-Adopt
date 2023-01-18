@@ -77,6 +77,26 @@ export async function registerUser(data){
     return userLogin
 }
 
+export async function registerPet(data){
+    const user = await fetch(`${baseURL}/pets`, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+
+    const userLogin = await user.json()
+   
+    if(!user.ok) {
+        callToastify(`Reveja os campos`, red)
+    } else {
+        callToastify("Pet cadastrado com sucesso", green)
+        setTimeout(()=>{
+            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html")
+        },2000)
+    }
+
+    return userLogin
+}
 
 export async function adopt(petId) {
     const data = {

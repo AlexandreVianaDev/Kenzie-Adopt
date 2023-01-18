@@ -37,6 +37,7 @@ dialog::backdrop{
 }
 
 .btn_closeModal {
+     cursor: pointer;
      background: none;
      position: absolute;
      right: 12px;
@@ -56,6 +57,7 @@ dialog::backdrop{
 /* CSS FOR EACH MODAL TYPE, GIVE THIS CLASS TO THE DIV */
 
 .modal--delete {
+     cursor: pointer;
      display: flex;
      flex-direction: column;
      justify-content: center;

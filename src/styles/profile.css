@@ -1,17 +1,24 @@
+body{
+    overflow-x: hidden;
+    position: relative;
+}
 
 .header_container{
-    width: 100vw; height: 10vh;
+    width: 100vw; height: 12vh;
+    padding: 0 .25rem 0  .3rem;
     background-color: var(--color-white);
-    gap: .2rem;
+    
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 .logo{
     color: var(--color-brand-1);
     font-family: var(--font-family-3);
     font-size: var(--font-title-3);
     font-weight: var(--font-weight-2);
+    padding: 1rem;
+
 }
 .title{
     color: var(--color-brand-1);
@@ -21,6 +28,7 @@
     margin-bottom: 1rem;
 }
 .buttons{
+    gap: 1rem;
     display: flex;
     flex-direction: row;
 }
@@ -28,6 +36,7 @@ main > .container {
     display: flex;
     flex-direction: column;
     gap: 48px;
+    padding-bottom: 5rem;
 }
 #profile {
     display: flex;
@@ -169,6 +178,24 @@ main > .container {
     width: fit-content;
 }
 
+.footer_container{
+    width: 100vw; height: 5vh;
+    padding: 0 1rem;
+    background-color: #F1EEF7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+}
+.footer_text{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-text-3);
+    font-weight: var(--font-weight-4);
+    line-height: 11px;
+} 
 @media screen and (min-width: 420px) {
     #profile__control {
         flex-direction: row;
@@ -190,5 +217,15 @@ main > .container {
         gap: 1rem;
         display: flex;
    }
+   .header_container{
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .buttons{
+        gap: .4rem;
+        display: flex;
+    }
 
 }
