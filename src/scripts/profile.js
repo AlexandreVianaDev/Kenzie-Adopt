@@ -67,6 +67,7 @@ async function modalDeleteProfile() {
     const modalContent = document.querySelector("#modal__content")
 
     modalContent.setAttribute("class","modal--delete")
+    modalContent.innerHTML = ""
 
     const h2 = document.createElement("h2")
     h2.classList.add("title-1")
@@ -123,6 +124,7 @@ function start () {
     renderProfile()
     renderAllMyPets()
     prepareBtnUpdateProfile()
+    prepareBtnDeleteProfile()
     // modalDeleteProfile()
     // deleteProfile()
 }
@@ -218,6 +220,15 @@ async function modalUpdateProfile() {
     modalContent.append(h2,form)
 
     modal.showModal()
+}
+
+function prepareBtnDeleteProfile() {
+    const button = document.querySelector("#deleteProfile__btn")
+
+    button.addEventListener("click", (event) => {
+        event.preventDefault()
+        modalDeleteProfile()
+    })
 }
 
 acessControl()

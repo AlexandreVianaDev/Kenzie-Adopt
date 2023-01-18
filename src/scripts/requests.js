@@ -112,6 +112,10 @@ export async function deleteAccount() {
         callToastify("Houve um erro ao deletar a conta", red)
     } else {
         callToastify("Conta deletada", green)
+        localStorage.clear()
+        setTimeout(()=>{
+            window.location.replace("/")
+        },2000)
     }
 
     return accountJSON
