@@ -1,4 +1,4 @@
-import { getAllMyPets, deleteAccount, getProfileInfos } from "./requests.js"
+import { getAllMyPets, deleteAccount, getProfileInfos, updateUser } from "./requests.js"
 
 async function renderAllMyPets() {
     const pets = await getAllMyPets()
@@ -66,7 +66,7 @@ async function modalDeleteProfile() {
     const modal = document.querySelector("dialog")
     const modalContent = document.querySelector("#modal__content")
 
-    modalContent.classList.add("modal--delete")
+    modalContent.setAttribute("class","modal--delete")
 
     const h2 = document.createElement("h2")
     h2.classList.add("title-1")
@@ -122,6 +122,7 @@ async function renderProfile() {
 function start () {
     renderProfile()
     renderAllMyPets()
+    prepareBtnUpdateProfile()
     // modalDeleteProfile()
     // deleteProfile()
 }
@@ -152,5 +153,72 @@ function buttonHome(){
     })
 }
 // Vou construir uma função logout
+
+function prepareBtnUpdateProfile() {
+    const button = document.querySelector("#updateProfile__btn")
+
+    button.addEventListener("click", (event) => {
+        event.preventDefault()
+        modalUpdateProfile()
+    })
+}
+
+async function modalUpdateProfile() {
+
+    const modal = document.querySelector("dialog")
+    const modalContent = document.querySelector("#modal__content")
+
+    modalContent.setAttribute("class","modal--updateProfile")
+    modalContent.innerHTML = ""
+
+    const h2 = document.createElement("h2")
+    h2.classList.add("title-1")
+    h2.innerText = "Atualizar Perfil"
+
+    const form = document.createElement("form")
+    form.classList.add("form")
+
+    const inputName = document.createElement("input")
+    inputName.placeholder = "Nome"
+    inputName.type = "name"
+    inputName.id = "name"
+
+    const inputAvatar = document.createElement("input")
+    inputAvatar.placeholder = "Avatar"
+    inputAvatar.type = "url"
+    inputAvatar.id = "avatar_url"
+
+    const updateBtn = document.createElement("button")
+
+    form.append(inputName,inputAvatar, updateBtn)
+    
+    updateBtn.classList.add("button-purple")
+    updateBtn.innerText = "Atualizar"
+    updateBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        const inputs = document.querySelectorAll("form > input")
+        console.log(inputs)
+        const data = {}
+
+        inputs.forEach(input => {
+            if(input.value.length > 0) {
+                data[input.id] = input.value
+            }
+        })         
+         updateUser(data)
+        modal.close()
+    })
+
+    const closeModalBtn = document.querySelector(".btn_closeModal")
+    closeModalBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        modal.close()
+    })
+
+    modalContent.append(h2,form)
+
+    modal.showModal()
+}
+
 acessControl()
 start()

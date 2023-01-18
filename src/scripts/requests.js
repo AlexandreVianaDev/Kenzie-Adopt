@@ -131,3 +131,24 @@ export async function getProfileInfos() {
 
     return profileJSON
 }
+
+export async function updateUser(data) {
+    const user = await fetch(`${baseURL}/users/profile`, {
+        method: "PATCH",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+
+    const userJSON = await user.json()
+
+    if(!user.ok) {
+        callToastify("Houve um erro ao atualizar o perfil", red)
+    } else {
+        callToastify("Perfil atualizado", green)
+        setTimeout(()=>{
+            window.location.replace("/src/pages/profile.html")
+        },2000)
+    }
+
+    return userJSON
+}
