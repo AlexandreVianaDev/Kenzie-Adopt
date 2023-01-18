@@ -1,3 +1,29 @@
+
+.header_container{
+    width: 100vw; height: 10vh;
+    background-color: var(--color-white);
+    gap: .2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.logo{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-title-3);
+    font-weight: var(--font-weight-2);
+}
+.title{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-title-3);
+    font-weight: var(--font-weight-2);
+    margin-bottom: 1rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
 #pets {
     max-width: 1010px;
 }
@@ -70,4 +96,15 @@
         flex-direction: row;
         word-break: normal;
     }
+    .header_container{
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+   }
+   .buttons{
+        gap: 1rem;
+        display: flex;
+   }
+
 }
