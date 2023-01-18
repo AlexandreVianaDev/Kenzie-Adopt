@@ -1,4 +1,4 @@
-import { getAllMyPets, deleteAccount, getProfileInfos, updateUser } from "./requests.js"
+import { getAllMyPets, deleteAccount, getProfileInfos, updateUser, registerPet } from "./requests.js"
 
 async function renderAllMyPets() {
     const pets = await getAllMyPets()
@@ -127,6 +127,7 @@ function start () {
     prepareBtnDeleteProfile()
     // modalDeleteProfile()
     // deleteProfile()
+    
 }
 
 function acessControl(){
@@ -222,6 +223,69 @@ async function modalUpdateProfile() {
     modal.showModal()
 }
 
+function modalRegisterpet(){
+    const modal = document.querySelector('.modal')
+    const buttonOpen = document.querySelector('#registerPet')
+
+    buttonOpen.addEventListener('click',()=>{
+        let div_1 = document.createElement('div')
+        let div_2 = document.createElement('div')
+        let div_3 = document.createElement('div')
+        let form = document.createElement('form')
+        let h1_1 = document.createElement('h1')
+        let input_1 = document.createElement('input')
+        let input_2 = document.createElement('input')
+        let input_3 = document.createElement('input')
+        let button_1 = document.createElement('button')
+        let button_2 = document.createElement('button')
+        let i = document.createElement('i')
+        
+        div_1.classList.add('modal__div')
+        div_2.classList.add('box_top')
+        div_3.classList.add('box_bottom')
+    
+        i.classList = 'fa-regular fa-circle-xmark'
+        form.classList.add('form')
+    
+        button_1.classList.add('btn_closeModal')
+        button_2.classList.add('btn_enter')
+    
+    
+        h1_1.classList.add('title')
+    
+        input_1.setAttribute('id','name')
+        input_1.setAttribute('type','name')
+        input_1.setAttribute('autocomplete','name')
+        input_1.setAttribute('placeholder','Nome')
+    
+        input_2.setAttribute('id','breed')
+        input_2.setAttribute('type','name')
+        input_2.setAttribute('autocomplete','name')
+        input_2.setAttribute('placeholder','Raça')
+
+        input_3.setAttribute('id','avatar')
+        input_3.setAttribute('type','url')
+        input_3.setAttribute('autocomplete','name')
+        input_3.setAttribute('placeholder','Avatar')
+
+        h1_1.innerText = 'Cadastrar Pet'
+        button_2.innerText = 'Cadastrar'
+       
+        div_1.append(div_2, form, div_3)
+        div_2.appendChild(button_1)
+        button_1.appendChild(i)
+        form.append(h1_1, input_1, input_2, input_3,button_2)
+        
+        modal.innerHTML = ''
+        modal.appendChild(div_1)    
+        modal.showModal()
+        closeModal()
+        register()
+    })
+
+
+}
+
 function prepareBtnDeleteProfile() {
     const button = document.querySelector("#deleteProfile__btn")
 
@@ -231,5 +295,33 @@ function prepareBtnDeleteProfile() {
     })
 }
 
+function register(params) {
+    const button = document.querySelector('.btn_enter')
+    let name = document.querySelector('#name')
+    let breed = document.querySelector('#breed')
+    let ava = document.querySelector('#avatar')
+
+    button.addEventListener('click',(e)=>{
+        e.preventDefault()
+        let data = {
+            "name": `${name.value}`,
+            "bread": `${breed.value}`,
+            "species": "Cachorro",
+            "avatar_url": `${ava.value}`
+        }
+        registerPet(data)
+    })
+
+}
+function closeModal(){
+    const button = document.querySelector('.btn_closeModal')
+    const modal = document.querySelector('.modal')
+
+
+    button.addEventListener('click',()=>{
+        modal.close()
+    })
+}
 acessControl()
 start()
+modalRegisterpet()

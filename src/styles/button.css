@@ -24,7 +24,7 @@
 .btn_closeModal{
      cursor: pointer;
      position: absolute;
-     right: 1.5rem; top: 1rem;
+     right: 1.5rem; 
      padding: .4rem .54rem;
      color: var(--color-white);
 }
