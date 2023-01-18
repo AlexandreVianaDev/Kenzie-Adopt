@@ -1,4 +1,4 @@
-import { getAllMyPets, deleteAccount } from "./requests.js"
+import { getAllMyPets, deleteAccount, getProfileInfos } from "./requests.js"
 
 async function renderAllMyPets() {
     const pets = await getAllMyPets()
@@ -101,10 +101,28 @@ async function modalDeleteProfile() {
     modal.showModal()
 }
 
+async function renderProfile() {
+    const profile = await getProfileInfos()
+
+    const { name, email, avatar_url } = profile
+
+    const profileImg = document.querySelector("#profile__img")
+    profileImg.src = avatar_url
+
+    const nameSpan = document.querySelector("#profile__name")
+    nameSpan.innerText = `${name}`
+
+    const emailSpan = document.querySelector("#profile__email")
+    emailSpan.innerText = `${email}`
+    
+    console.log(profile)
+}
+
 // função de controle, só serve para chamar e organizar todas as funções que são chamadas assim que a página carrega
 function start () {
-    // renderAllMyPets()
-    modalDeleteProfile()
+    renderProfile()
+    renderAllMyPets()
+    // modalDeleteProfile()
     // deleteProfile()
 }
 
