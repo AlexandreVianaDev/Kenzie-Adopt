@@ -62,8 +62,6 @@ async function renderAllMyPets() {
     
 }
 
-
-
 async function modalDeleteProfile() {
     const modal = document.querySelector("dialog")
     const modalContent = document.querySelector("#modal__content")
@@ -126,4 +124,13 @@ function start () {
     // deleteProfile()
 }
 
+function acessControl(){
+    const token = localStorage.getItem('@KenziePets:tokenUser');
+
+    if(!token)
+        window.location.href = '../../index.html'
+    else
+    console.log('logado')
+}
+acessControl()
 start ()

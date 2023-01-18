@@ -50,7 +50,7 @@
      font-weight: var(--font-weight-2);
      line-height: 11px;
 }
-.register{
+.register,.login{
      cursor: pointer;
      color: var(--color-brand-1);
      font-family: var(--font-family-3);
@@ -58,6 +58,7 @@
      font-weight: var(--font-weight-2);
      line-height: 11px;
 }
+
 
 @media(min-width: 768px){
      .header_container{
