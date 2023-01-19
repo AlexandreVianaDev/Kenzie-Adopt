@@ -27,7 +27,7 @@ export async function getAllMyPets() {
     const petsJSON = pets.json()
 
     if(!pets.ok) {
-        callToastify("Erro ao requisitar meus pets", red)
+        callToastify("Erro ao carregar meus pets", red)
     } 
 
     return petsJSON
@@ -44,12 +44,14 @@ export async function loginUser(data){
     const userLogin = await user.json()
    
     if(!user.ok) {
-        callToastify("Failed", red)
+        callToastify("Erro ao realizar login, verifique os campos", red)
     } else {
-        callToastify("Sucess", green)
+        callToastify("Login realizado", green)
         localStorage.setItem('@KenziePets:tokenUser',`${userLogin.token}`)
+        const modal = document.querySelector("dialog")
+        modal.close()
         setTimeout(()=>{
-            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html")
+            window.location.replace("/")
         },1000)
     }
 
@@ -64,12 +66,10 @@ export async function showPets(){
     const petsNamesJSON = await petsNames.json();
     
     const ul = document.querySelector('#petsCards');
-    console.log(ul)
     ul.classList.add('cardsAdoption')
     
     petsNamesJSON.forEach(pet => {
         if(pet.available_for_adoption){
-            console.log("Ta disponível")
         
             const li = document.createElement('li');
             li.classList.add('card')
@@ -88,11 +88,15 @@ export async function showPets(){
             ul.append(li);
             li.append(petImage, petName, petSpecie);
             if(token.length){
-                console.log("Logado")
                 const button = document.createElement("button")
                 button.classList.add("button-green")
                 button.innerText = "Me adota?"
                 li.appendChild(button)
+
+                button.addEventListener("click", (event) => {
+                    event.preventDefault()
+                    adopt(pet.id)
+                })
             }
         }
     });
@@ -111,8 +115,10 @@ export async function registerUser(data){
         callToastify(`Veja se todos campos estão completos`, red)
     } else {
         callToastify("Cadastro realizado com sucesso", green)
+        const modal = document.querySelector("dialog")
+        modal.close()
         setTimeout(()=>{
-            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html")
+            window.location.replace("/")
         },2000)
     }
 
@@ -129,11 +135,13 @@ export async function registerPet(data){
     const userLogin = await user.json()
    
     if(!user.ok) {
-        callToastify(`Reveja os campos`, red)
+        callToastify(`Erro ao cadastrar Pet, preencha todos os campos corretamente`, red)
     } else {
         callToastify("Pet cadastrado com sucesso", green)
+        const modal = document.querySelector("dialog")
+        modal.close()
         setTimeout(()=>{
-            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html")
+            window.location.replace("/src/pages/profile.html")
         },2000)
     }
 
@@ -157,6 +165,9 @@ export async function adopt(petId) {
         callToastify("Erro ao adotar o pet", red)
     } else {
         callToastify("Pet adotado com sucesso", green)
+        setTimeout(()=>{
+            window.location.replace("/")
+        },2000)
     }
 
     return petJSON
@@ -175,6 +186,8 @@ export async function deleteAccount() {
     } else {
         callToastify("Conta deletada", green)
         localStorage.clear()
+        const modal = document.querySelector("dialog")
+        modal.close()
         setTimeout(()=>{
             window.location.replace("/")
         },2000)
@@ -211,6 +224,8 @@ export async function updateUser(data) {
         callToastify("Houve um erro ao atualizar o perfil", red)
     } else {
         callToastify("Perfil atualizado", green)
+        const modal = document.querySelector("dialog")
+        modal.close()
         setTimeout(()=>{
             window.location.replace("/src/pages/profile.html")
         },2000)
@@ -219,8 +234,8 @@ export async function updateUser(data) {
     return userJSON
 }
 
-export async function getMypet(data){
-    const pets = await fetch(`${baseURL}/pets`, {
+export async function updateMyPet(id, data){
+    const pets = await fetch(`${baseURL}/pets/${id}`, {
         method: "PATCH",
         headers: headers,
         body:JSON.stringify(data)
@@ -229,8 +244,15 @@ export async function getMypet(data){
     const petsJSON = pets.json()
 
     if(!pets.ok) {
-        callToastify("Erro ao requisitar meus pets", red)
-    } 
+        callToastify("Erro ao atualizar meu pet", red)
+    } else {
+        callToastify("Pet atualizado", green)
+        const modal = document.querySelector("dialog")
+        modal.close()
+        setTimeout(()=>{
+            window.location.replace("/src/pages/profile.html")
+        },2000)
+    }
 
     return petsJSON
 }

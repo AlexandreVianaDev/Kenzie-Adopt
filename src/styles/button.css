@@ -1,4 +1,4 @@
-.btn_register,.btn_home, .btn_profile{
+/* .btn_register,.btn_home, .btn_profile{
      display: flex;
      color: var(--color-brand-1);
      height: 2rem;
@@ -20,7 +20,7 @@
      font-family: var(--font-family-3);
      font-size: var(--font-text-1);
      font-weight: var(--font-weight-2);
-}
+} */
 .btn_closeModal{
      cursor: pointer;
      position: absolute;

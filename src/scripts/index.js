@@ -1,8 +1,8 @@
-import { loginUser, getUser, token, registerUser, showPets } from "./requests.js"
+import { loginUser, getUser, registerUser, showPets } from "./requests.js"
 
 export function logout(){
      localStorage.clear()
-     window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
+     window.location.replace('/')
 }
 
 function modalLogin(){
@@ -14,6 +14,7 @@ function modalLogin(){
           let div_2 = createElementWithClass('div','box_top','','')
           let div_3 = createElementWithClass('div','box_bottom','','')
           let form = createElementWithClass('form',"form",'','')
+          form.classList.add("login__form")
           let h1_1 = createElementWithClass('h1',"title",'','Login')
           let h1_2 = createElementWithClass('h1',"text",'',`Não tem cadastro?  <span class="register">Clique aqui</span>  para se cadastrar.`)
           let button_1 = createElementWithClass('button','btn_closeModal','','')
@@ -154,8 +155,6 @@ function logInto() {
                "password": `${pass.value}`
           }
           loginUser(data)
-          modal.close()
-
      })
 }
 
@@ -208,11 +207,13 @@ async function modButton(){
           btn_logout.innerText = 'Logout'
 
           btn_profile.classList.add('btn_profile')
+          btn_profile.classList.add('button-white')
           btn_logout.classList.add('btn_logout')
+          btn_logout.classList.add('button-purple')
 
           buttons.append(btn_profile,btn_logout)
           btn_profile.addEventListener('click',()=>{
-               window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html") 
+               window.location.replace("/src/pages/profile.html") 
           })
           btn_logout.addEventListener('click',()=>{
                logout()

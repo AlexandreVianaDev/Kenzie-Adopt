@@ -1,11 +1,17 @@
-
-.header_container{
-     width: 100vw; height: 10vh;
+.header_container {
+     width: 100vw;
+     height: 116px;
+     min-height: fit-content;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     margin-bottom: 36px;
+}
+.header_container > div {
+     width: 100%;
      padding: 0 .25rem 0  .3rem;
      background-color: var(--color-white);
      gap: .2rem;
      display: flex;
-     align-items: center;
+     /* align-items: center; */
      flex-direction: column;
 }
 .logo{
@@ -23,6 +29,7 @@
      margin-bottom: 1rem;
 }
 .buttons{
+     padding: 1rem;
      gap: 1rem;
      display: flex;
      flex-direction: row;
@@ -35,16 +42,16 @@
      align-items: center;
      justify-content: center;
      flex-direction: row;
-     position: absolute;
+     position: fixed;
      bottom: 0;
-}
-.footer_text{
+ }
+ .footer_text{
      color: var(--color-brand-1);
      font-family: var(--font-family-3);
      font-size: var(--font-text-3);
      font-weight: var(--font-weight-4);
      line-height: 11px;
-} 
+ } 
 .text{
      margin: .5rem 0 0 -2rem;
      color: var(--color-black);
@@ -65,9 +72,12 @@
 .cardsAdoption{
      display: flex;
      flex-wrap: wrap;
+     justify-content: center;
      gap: 48px;
-     width: 728px;
+     width: 850px;
+     max-width: 100%;
      margin: 0 auto;
+     padding: 36px;
 }
 
 .card{
@@ -97,12 +107,21 @@
      margin: 8px auto;
 }
 
+.login__form {
+     margin-top: 40px;
+}
+
 @media(min-width: 425px){
      .header_container{
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          height: 85px;
      }
+     .header_container > div {
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+     } 
      .buttons{
           gap: .4rem;
           display: flex;

@@ -18,15 +18,17 @@
     <!-- TOASTIFY -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
-    <title>Perfil</title>
+    <title>KenziePets - Perfil</title>
 </head>
 <body>
     <header class="header_container">
-        <h1 class="logo" >KenziePets</h1>
-         <nav class="buttons">
-              <button id="btn_home" class="button-white">Home</button> 
-              <button id="btn_logout"  class="button-purple">Logout</button>
-         </nav>
+        <div class="container">
+            <h1 class="logo" >KenziePets</h1>
+             <nav class="buttons">
+                  <button id="btn_home" class="button-white">Home</button> 
+                  <button id="btn_logout"  class="button-purple">Logout</button>
+             </nav>
+        </div>
     </header>  
     <main>
         <div class="container">
@@ -65,13 +67,6 @@
                 <ul id="cards__list">
                 </ul>
             </section>
-
-            <!-- MODAL -->
-
-            <dialog class="modal">
-
-            </dialog>
-
         </div>
         
     </main>
@@ -79,13 +74,13 @@
         <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
    </footer>
    <dialog class="modal">
-    <div class="modal__div">
-        <div class="box_top">
-            <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
-       </div>
-       <div id="modal__content"></div>
-       <div class="box_bottom"></div>
-    </div>
-</dialog> 
+        <div class="modal__div">
+            <div class="box_top">
+                <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
+        </div>
+        <div id="modal__content"></div>
+        <div class="box_bottom"></div>
+        </div>
+    </dialog> 
 </body>
 </html>

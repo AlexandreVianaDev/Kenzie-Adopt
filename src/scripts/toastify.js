@@ -12,7 +12,7 @@ export function callToastify(text, color) {
             "padding": "20px 40px",
             "border-radius": "10px",
             "max-width": "207px",
-            "text-align": "center"
+            "text-align": "center",
         }
         
         }).showToast();

@@ -25,21 +25,26 @@
           <script type="module" src="./src/scripts/index.js" defer></script>
 
 
-          <title>Pets</title>
+          <title>KenziePets - Home</title>
      </head>
      <body>
           
           <header class="header_container">
-              <h1 class="logo" >KenziePets</h1>
-               <nav class="buttons">
-                    <button  class="btn_register">Register</button> 
-                    <button id="button_nav" class="btn_login">Login</button>
-               </nav>
+               <div class="container">
+                    <h1 class="logo" >KenziePets</h1>
+                    <nav class="buttons">
+                         <button  class="btn_register button-white">Register</button> 
+                         <button id="button_nav" class="btn_login button-purple">Login</button>
+                    </nav>
+               </div>
           </header>  
           <main>
                <ul id="petsCards">
                </ul>
-          </main>
+          </main>         
+          <footer class="footer_container">
+               <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
+          </footer>
           <dialog class="modal">
                <div class="modal__div">
                    <div class="box_top">
@@ -48,9 +53,6 @@
                   <div id="modal__content"></div>
                   <div class="box_bottom"></div>
                </div>
-          </dialog>          
-          <footer class="footer_container">
-               <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
-          </footer>
+          </dialog> 
      </body>
 </html>
