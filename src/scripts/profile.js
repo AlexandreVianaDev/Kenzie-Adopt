@@ -50,7 +50,6 @@ async function renderAllMyPets() {
         updateBtn.classList.add("button-purple")
         updateBtn.addEventListener("click", (event) => {
             event.preventDefault()
-            console.log(event.target)
             // chama função que abre modal de atualizar pet
         })
 
