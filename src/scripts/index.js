@@ -1,5 +1,6 @@
 import { loginUser, getUser, registerUser, showPets } from "./requests.js"
 
+// função de logout
 export function logout(){
      localStorage.clear()
      window.location.replace('/')
