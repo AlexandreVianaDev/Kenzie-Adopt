@@ -186,7 +186,7 @@ main > .container {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 .footer_text{
