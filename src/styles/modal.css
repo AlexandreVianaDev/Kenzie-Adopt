@@ -35,15 +35,15 @@ dialog::backdrop{
      position: relative;
      display: flex;
      flex-direction: column;
-     justify-content: space-between;
+     /* justify-content: space-between; */
 }
 
 .btn_closeModal {
      cursor: pointer;
      background: none;
      position: absolute;
-     right: 12px;
-     top: 8px;
+     right: 8px;
+     top: 4px;
 }
 
 .btn_closeModal > i {
@@ -58,7 +58,7 @@ dialog::backdrop{
 
 /* CSS FOR EACH MODAL TYPE, GIVE THIS CLASS TO THE DIV */
 
-.modal--delete {
+/* .modal--delete {
      cursor: pointer;
      display: flex;
      flex-direction: column;
@@ -80,4 +80,28 @@ dialog::backdrop{
      align-items: center;
      max-width: 240px;
      gap: 16px;
+} */
+
+#modal__content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 16px;
+     width: 100%;
+     height: 100%;
+}
+
+#modal__content > form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     max-width: 320px;
+     gap: 12px;
+     padding: 0;
+     height: fit-content;
+} 
+
+#modal__content > form > h2, #modal__content > form > h1 {
+     margin: 16px auto;
 }
