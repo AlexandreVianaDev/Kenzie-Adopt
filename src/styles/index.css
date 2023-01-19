@@ -71,6 +71,18 @@
      line-height: 11px;
 }
 
+.cardsAdoption{
+     display: flex;
+     
+}
+
+.card{
+     width: 100px;
+     height: 100px;
+}
+
+
+
 @media screen and (min-width: 1000px) {
      .header_container{
           padding: 0 3rem;

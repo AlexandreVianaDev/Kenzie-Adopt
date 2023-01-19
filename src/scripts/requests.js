@@ -59,11 +59,34 @@ async function showPets(){
         method: "GET",
         headers: headers
     });
+    const petsNamesJSON = await petsNames.json();
+    console.log(petsNamesJSON)
+    
+    const ul = document.querySelector('#petsCards');
+    ul.classList.add('cardsAdoption')
+    
+    petsNamesJSON.forEach(pet => {
+        if(pet.available_for_adoption){
+            console.log("Ta disponível")
+        
+            const li = document.createElement('li');
+            li.classList.add('card')
+
+            const petName = document.createElement('h2');
+            petName.innerText = `${pet.name}`
+            petName.classList = "text-1"
+            
+            const petSpecie = document.createElement ('span')
+            petSpecie.innerText = `${pet.species}`
+            petSpecie.classList = "text-2"
+
+            const petImage = document.createElement('img');
+            petImage.src = `${pet.avatar_url}`;
 
 
-
-    const main = document.querySelector('main');
-
+            ul.append(li);
+            li.append(petImage, petName, petSpecie);
+        }
+    });
 }
-
-const teste = 12;
+showPets();
