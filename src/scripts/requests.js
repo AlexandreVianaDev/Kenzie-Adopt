@@ -56,7 +56,7 @@ export async function loginUser(data){
     return userLogin
 }
 
-async function showPets(){
+export async function showPets(){
     const petsNames = await fetch(`${baseURL}/pets`, {
         method: "GET",
         headers: headers
@@ -64,6 +64,7 @@ async function showPets(){
     const petsNamesJSON = await petsNames.json();
     
     const ul = document.querySelector('#petsCards');
+    console.log(ul)
     ul.classList.add('cardsAdoption')
     
     petsNamesJSON.forEach(pet => {
@@ -75,22 +76,27 @@ async function showPets(){
 
             const petName = document.createElement('h2');
             petName.innerText = `${pet.name}`
-            petName.classList = "text-1"
+            petName.classList = "title-1"
             
             const petSpecie = document.createElement ('span')
             petSpecie.innerText = `${pet.species}`
-            petSpecie.classList = "text-2"
-
+            petSpecie.classList = "text-1"
+            
             const petImage = document.createElement('img');
             petImage.src = `${pet.avatar_url}`;
 
-
             ul.append(li);
             li.append(petImage, petName, petSpecie);
+            if(token.length){
+                console.log("Logado")
+                const button = document.createElement("button")
+                button.classList.add("button-green")
+                button.innerText = "Me adota?"
+                li.appendChild(button)
+            }
         }
     });
 }
-showPets();
 
 export async function registerUser(data){
     const user = await fetch(`${baseURL}/users`, {
@@ -228,3 +234,4 @@ export async function getMypet(data){
 
     return petsJSON
 }
+
