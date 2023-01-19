@@ -51,7 +51,7 @@ export async function loginUser(data){
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/index.html")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/index.html")
         },1000)
     }
 
@@ -118,7 +118,7 @@ export async function registerUser(data){
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/index.html")
         },2000)
     }
 
@@ -141,7 +141,7 @@ export async function registerPet(data){
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/src/pages/profile.html")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html")
         },2000)
     }
 
@@ -166,7 +166,7 @@ export async function adopt(petId) {
     } else {
         callToastify("Pet adotado com sucesso", green)
         setTimeout(()=>{
-            window.location.replace("/")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/index.html")
         },2000)
     }
 
@@ -189,7 +189,7 @@ export async function deleteAccount() {
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/index.html")
         },2000)
     }
 
@@ -227,7 +227,7 @@ export async function updateUser(data) {
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/src/pages/profile.html")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html")
         },2000)
     }
 
@@ -250,7 +250,7 @@ export async function updateMyPet(id, data){
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/src/pages/profile.html")
+            window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html")
         },2000)
     }
 
