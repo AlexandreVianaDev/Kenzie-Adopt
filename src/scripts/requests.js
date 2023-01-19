@@ -77,18 +77,24 @@ export async function showPets(){
 
             const petName = document.createElement('h2');
             petName.innerText = `${pet.name}`
-            petName.classList = "text-1"
+            petName.classList = "title-1"
             
             const petSpecie = document.createElement ('span')
             petSpecie.innerText = `${pet.species}`
-            petSpecie.classList = "text-2"
-
+            petSpecie.classList = "text-1"
+            
             const petImage = document.createElement('img');
             petImage.src = `${pet.avatar_url}`;
 
-
             ul.append(li);
             li.append(petImage, petName, petSpecie);
+            if(token.length){
+                console.log("Logado")
+                const button = document.createElement("button")
+                button.classList.add("button-green")
+                button.innerText = "Me adota?"
+                li.appendChild(button)
+            }
         }
     });
 }
