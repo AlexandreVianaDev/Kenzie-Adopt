@@ -51,7 +51,7 @@ export async function loginUser(data){
         const modal = document.querySelector("dialog")
         modal.close()
         setTimeout(()=>{
-            window.location.replace("/")
+            window.location.replace("/index.html")
         },1000)
     }
 
