@@ -3,7 +3,7 @@ import { loginUser, getUser, registerUser, showPets } from "./requests.js"
 // função de logout
 export function logout(){
      localStorage.clear()
-     window.location.replace('/index.html')
+     window.location.replace('/m2-projeto-em-equipe_Bruno120Ab/index.html')
 }
 
 function modalLogin(){
