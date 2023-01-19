@@ -1,0 +1,130 @@
+.header_container {
+     width: 100vw;
+     height: 116px;
+     min-height: fit-content;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     margin-bottom: 36px;
+}
+.header_container > div {
+     width: 100%;
+     padding: 0 .25rem 0  .3rem;
+     background-color: var(--color-white);
+     gap: .2rem;
+     display: flex;
+     /* align-items: center; */
+     flex-direction: column;
+}
+.logo{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-title-3);
+     font-weight: var(--font-weight-2);
+     padding: 1rem;
+}
+.title{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-title-3);
+     font-weight: var(--font-weight-2);
+     margin-bottom: 1rem;
+}
+.buttons{
+     padding: 1rem;
+     gap: 1rem;
+     display: flex;
+     flex-direction: row;
+}
+.footer_container{
+     width: 100vw; height: 5vh;
+     padding: 0 1rem;
+     background-color: #F1EEF7;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: row;
+     position: fixed;
+     bottom: 0;
+ }
+ .footer_text{
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-3);
+     font-weight: var(--font-weight-4);
+     line-height: 11px;
+ } 
+.text{
+     margin: .5rem 0 0 -2rem;
+     color: var(--color-black);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-0);
+     font-weight: var(--font-weight-2);
+     line-height: 11px;
+}
+.register,.login{
+     cursor: pointer;
+     color: var(--color-brand-1);
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-0);
+     font-weight: var(--font-weight-2);
+     line-height: 11px;
+}
+
+.cardsAdoption{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 48px;
+     width: 850px;
+     max-width: 100%;
+     margin: 0 auto;
+     padding: 36px;
+}
+
+.card{
+     width: 200px;
+     height: 315px;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+     border-radius: 4px;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card > img {
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+     width: 200px;
+     height: 160px;
+     object-fit: cover;
+}
+
+.card > h2, .card > span {
+     padding: 8px 4px 4px 16px;
+}
+
+.card > button {
+     width: fit-content;
+     margin: 8px auto;
+}
+
+.login__form {
+     margin-top: 40px;
+}
+
+@media(min-width: 425px){
+     .header_container{
+          display: flex;
+          flex-direction: row;
+          height: 85px;
+     }
+     .header_container > div {
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+     } 
+     .buttons{
+          gap: .4rem;
+          display: flex;
+     }
+}
+

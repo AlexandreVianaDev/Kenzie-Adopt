@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!-- CSS -->
+          <link rel="stylesheet" href="./src/styles/reset.css">
+          <link rel="stylesheet" href="./src/styles/globalStyles.css">
+          <link rel="stylesheet" href="./src/styles/index.css">
+          <link rel="stylesheet" href="./src/styles/button.css">
+          <link rel="stylesheet" href="./src/styles/modal.css">
+          <link rel="stylesheet" href="./src/styles/input.css">
+          
+          <!-- FONT AWESOME -->
+          <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
+
+          <!-- CDN -->
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+          <!-- Toastfy -->
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
+          <!-- JS -->
+          <script type="module" src="./src/scripts/index.js" defer></script>
+
+
+          <title>KenziePets - Home</title>
+     </head>
+     <body>
+          
+          <header class="header_container">
+               <div class="container">
+                    <h1 class="logo" >KenziePets</h1>
+                    <nav class="buttons">
+                         <button  class="btn_register button-white">Register</button> 
+                         <button id="button_nav" class="btn_login button-purple">Login</button>
+                    </nav>
+               </div>
+          </header>  
+          <main>
+               <ul id="petsCards">
+               </ul>
+          </main>         
+          <footer class="footer_container">
+               <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
+          </footer>
+          <dialog class="modal">
+               <div class="modal__div">
+                   <div class="box_top">
+                       <button class="btn_closeModal"><i class="fa-regular fa-circle-xmark"></i></button>
+                  </div>
+                  <div id="modal__content"></div>
+                  <div class="box_bottom"></div>
+               </div>
+          </dialog> 
+     </body>
+</html>
