@@ -214,7 +214,7 @@ async function modButton(){
 
           buttons.append(btn_profile,btn_logout)
           btn_profile.addEventListener('click',()=>{
-               window.location.replace("/src/pages/profile.html") 
+               window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html") 
           })
           btn_logout.addEventListener('click',()=>{
                logout()
