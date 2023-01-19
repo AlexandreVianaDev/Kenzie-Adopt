@@ -7,6 +7,7 @@
      --color-grey-2: #EEEEEE;
      --color-white: #FFFFFF;
      --color-green: #33CC66;
+     --color-red: #EA534A;
    
      --bg-color: #FFFFFF;
      --bg-button: #0d1114;
@@ -54,9 +55,7 @@
      --container-1: 1200px;
      --container-2: 900px;
    
-     --font-family-1: Verdana, Geneva, Tahoma, sans-serif;
-     --font-family-2: Tahoma, sans-serif;
-     --font-family-3: Open Sans, sans-serif
+     --font-family-1: Open Sans, sans-serif
 }
    
  
@@ -75,12 +74,24 @@ body, button, input, textarea {
      font-weight: var(--font-weight-3);
      line-height: var(--line-heigth-4);
 }
-
-/* H1 ou H2 */
+::-webkit-scrollbar{
+     background-color: var(--color-grey-2);
+     width: .8rem;
+}
+::-webkit-scrollbar-thumb{
+     background-color: var(--color-brand-2);
+     border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb:hover{
+     background-color: var(--color-brand-1);
+     border-radius: 1rem;
+}
+/* 24px weight 700 line height 26px */
 .title-1 {
-     font-size: var(--font-title-1);
+     font-size: var(--font-text-4); 
      font-weight: var(--font-weight-1);
-     line-height: var(--line-heigth-1);
+     line-height: var(--line-heigth-2);
+     color: var(--color-brand-1);
 }
 
 /* H2 ou H3 */
@@ -109,15 +120,47 @@ body, button, input, textarea {
      background-color: var(--color-brand-1);
      color: var(--color-white);
      padding: 4px 16px;
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-2);
 }
+
+.button-white{
+     cursor: pointer;
+     border-radius: var(--radius-4);
+     background-color: var(--color-white);
+     border: 1px solid var(--color-brand-1);
+     color: var(--color-brand-1);
+     padding: 4px 16px;
+     font-family: var(--font-family-3);
+     font-size: var(--font-text-1);
+     font-weight: var(--font-weight-2);
+}
+
 
 .button-purple:hover, .button-green:hover {
      opacity: 75%;
 }
 
 .button-green {
+     cursor: pointer;
      border-radius: var(--radius-4);
      background-color: var(--color-green);
      color: var(--color-white);
      padding: 4px 16px;   
+     font-weight: var(--font-weight-2);
+}
+
+.button-white-red {
+     border-radius: var(--radius-4);
+     border: 1px solid var(--color-red);
+     color: var(--color-red);
+     background-color:  var(--color-white);
+     padding: 4px 16px;
+     font-weight: var(--font-weight-2);
+}
+
+.button-white-red:hover {
+     color:var(--color-white);
+     background-color: var(--color-red);  
 }

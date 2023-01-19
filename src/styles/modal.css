@@ -13,15 +13,69 @@ dialog::backdrop{
      flex-direction: column;
 }
 .box_top{
-     width: 100%; height: 15%;
+     width: 100%; height: 48px;
      background-color: var(--color-brand-1);
      border: 1px solid var(--color-brand-1);
      border-radius: 16px 16px 0px 0px;
      position: relative;
 }
 .box_bottom{
-     width: 100%; height: 5%;
+     width: 100%; height: 12px;
      background-color: var(--color-brand-1);
      border: 1px solid var(--color-brand-1);
      border-radius: 0px 0px 16px 16px;
+}
+
+/* MODAL */
+
+.modal__div {
+     width: 100%; height: 100%;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+.btn_closeModal {
+     cursor: pointer;
+     background: none;
+     position: absolute;
+     right: 12px;
+     top: 8px;
+}
+
+.btn_closeModal > i {
+     font-size: 26px;
+     color: var(--color-white);
+}
+
+#modal__content > h2 {
+     text-align: center;
+     padding: 12px;
+}
+
+/* CSS FOR EACH MODAL TYPE, GIVE THIS CLASS TO THE DIV */
+
+.modal--delete {
+     cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 16px;
+}
+
+.modal--updateProfile {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 32px;
+}
+
+.modal--updateProfile > form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     max-width: 240px;
+     gap: 16px;
 }

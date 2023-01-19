@@ -8,37 +8,71 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/globalStyles.css">
     <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/input.css">
+    <link rel="stylesheet" href="../styles/button.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/6b12ebc41a.js" crossorigin="anonymous"></script>
     <!-- JS -->
     <script type="module" src="../scripts/profile.js" defer></script>
     <!-- TOASTIFY -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
-
     <title>Perfil</title>
 </head>
 <body>
-    
-
+    <header class="header_container">
+        <h1 class="logo" >KenziePets</h1>
+         <nav class="buttons">
+              <button id="btn_home" class="button-white">Home</button> 
+              <button id="btn_logout"  class="button-purple">Logout</button>
+         </nav>
+    </header>  
     <main>
         <div class="container">
             <!-- PERFIL -->
 
             <section id="profile">
+                <figure>
+                    <img id="profile__img" src="" alt="">
+                </figure>
+                <div id="profile__infos">
+                    <h2 class="title-1">Dados pessoais</h2>
+                    <ul>
+                        <li>
+                            <span>Nome:</span><span id="profile__name"></span>
+                        </li>
+                        <li>
+                            <span>E-mail:</span><span id="profile__email"></span>
+                        </li>
+                    </ul>
+                    <div id="profile__control">
+                        <button class="button-purple" id="updateProfile__btn">Atualizar informações</button>
+                        <button class="button-white-red" id="deleteProfile__btn">Deletar conta</button>
+                    </div>
+
+                </div>
 
             </section>
 
             <!-- PETS -->
 
             <section id="pets">
-                <button id="registerPet" class="button-green">Cadastrar novo pet</button>
-
+                <div id="pets__control">
+                    <button id="registerPet" class="button-green">Cadastrar novo pet</button>
+                </div>
+                
                 <ul id="cards__list">
                 </ul>
             </section>
 
 
         </div>
+        
     </main>
-    
+    <footer class="footer_container">
+        <h1 class="footer_text">KenziePets | Todos os Direitos Reservados</h1>
+   </footer>
+    <dialog class="modal"></dialog> 
 </body>
 </html>

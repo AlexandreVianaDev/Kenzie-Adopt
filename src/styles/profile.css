@@ -1,5 +1,120 @@
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+.header_container{
+    width: 100vw; height: 12vh;
+    padding: 0 .25rem 0  .3rem;
+    background-color: var(--color-white);
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logo{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-title-3);
+    font-weight: var(--font-weight-2);
+    padding: 1rem;
+
+}
+.title{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-title-3);
+    font-weight: var(--font-weight-2);
+    margin-bottom: 1rem;
+}
+.buttons{
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+main > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 5rem;
+}
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+#profile > figure {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background: linear-gradient(
+        to top,
+        white 0%,
+        white 50%,
+        var(--color-brand-1) 50%,
+        var(--color-brand-1) 100%
+    );
+}
+
+#profile__img {
+    border-radius: var(--radius-100);
+    border: 3px solid var(--color-white);
+}
+
+#profile__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    padding: 24px;
+    width: 480px;
+    max-width: 90%;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+#profile__infos > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    align-self: flex-start;
+}
+
+#profile__infos > ul > li {
+    display: flex;
+    gap: 8px;
+}
+
+#profile__infos > ul > li > span:nth-child(odd) {
+    color: var(--color-brand-1);
+    font-weight: var(--font-weight-1);
+}
+
+#profile__control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#profile__control > button {
+    max-width: fit-content;
+}
+
 #pets {
     max-width: 1010px;
+    margin: 0 auto;
+}
+
+#pets__control {
+    padding-bottom: 26px;
 }
 
 #cards__list {
@@ -14,12 +129,11 @@
     display: flex;
     gap: 16px;
     align-items: center;
-
     width: 480px;
     max-width: 100vw;
     height: 200px;
-
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
 }
 
 #cards__list > li:hover {
@@ -30,6 +144,8 @@
     max-width: 200px;
     height: 200px;
     object-fit: cover;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 #cards__list > li > div {
@@ -49,7 +165,7 @@
 #cards__list > li > div > ul > li {
     display: flex;
     flex-direction: column;
-
+    gap: 8px;
     word-break: break-word;
 }
 
@@ -62,14 +178,28 @@
     width: fit-content;
 }
 
-
-/* 
-li > img e div
-div > ul > li (3) > spans (2 em cada)
-
-*/
-
+.footer_container{
+    width: 100vw; height: 5vh;
+    padding: 0 1rem;
+    background-color: #F1EEF7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+}
+.footer_text{
+    color: var(--color-brand-1);
+    font-family: var(--font-family-3);
+    font-size: var(--font-text-3);
+    font-weight: var(--font-weight-4);
+    line-height: 11px;
+} 
 @media screen and (min-width: 420px) {
+    #profile__control {
+        flex-direction: row;
+    }
     #cards__list > li {
         gap: 36px;
     }
@@ -77,4 +207,25 @@ div > ul > li (3) > spans (2 em cada)
         flex-direction: row;
         word-break: normal;
     }
+    .header_container{
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+   }
+   .buttons{
+        gap: 1rem;
+        display: flex;
+   }
+   .header_container{
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .buttons{
+        gap: .4rem;
+        display: flex;
+    }
+
 }
