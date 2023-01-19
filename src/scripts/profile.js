@@ -133,7 +133,7 @@ function acessControl(){
 
     if(!token){
         // window.location.href = '../../index.html'
-        window.location.replace("/index.html")
+        window.location.replace("/m2-projeto-em-equipe_Bruno120Ab/index.html")
     }
 }
 
@@ -142,7 +142,7 @@ function buttonLogout(){
 
     button.addEventListener('click',()=>{
         localStorage.clear()
-        window.location.replace('/index.html')
+        window.location.replace('/m2-projeto-em-equipe_Bruno120Ab/index.html')
     })
 }
 
@@ -150,7 +150,7 @@ function buttonHome(){
     const button = document.querySelector('#btn_home')
 
     button.addEventListener('click',()=>{
-        window.location.replace('/index.html')
+        window.location.replace('/m2-projeto-em-equipe_Bruno120Ab/index.html')
     })
 }
 // Vou construir uma função logout
