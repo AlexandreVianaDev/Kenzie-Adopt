@@ -11,63 +11,41 @@ function modalLogin(){
      const modal= document.querySelector('.modal')
      const btn_open = document.querySelector('.btn_login')
     
-
      btn_open.addEventListener('click',()=>{
-          let div_1 = document.createElement('div')
-          let div_2 = document.createElement('div')
-          let div_3 = document.createElement('div')
-          let form = document.createElement('form')
-          let h1_1 = document.createElement('h1')
-          let h1_2 = document.createElement('h1')
+          let div_1 = createElementWithClass('div','modal__div','','')
+          let div_2 = createElementWithClass('div','box_top','','')
+          let div_3 = createElementWithClass('div','box_bottom','','')
+          let form = createElementWithClass('form',"form",'','')
+          let h1_1 = createElementWithClass('h1',"title",'','Login')
+          let h1_2 = createElementWithClass('h1',"text",'',`Não tem cadastro?  <span class="register">Clique aqui</span>  para se cadastrar.`)
+          let button_1 = createElementWithClass('button','btn_closeModal','','')
+          let button_2 = createElementWithClass('button','btn_enter','','Login')
+          let i = createElementWithClass('i',"fa-regular fa-circle-xmark",'','')
           let input_1 = document.createElement('input')
           let input_2 = document.createElement('input')
-          let button_1 = document.createElement('button')
-          let button_2 = document.createElement('button')
-          let i = document.createElement('i')
-          
-          div_1.classList.add('modal__div')
-          div_2.classList.add('box_top')
-          div_3.classList.add('box_bottom')
-
-          i.classList = 'fa-regular fa-circle-xmark'
-          form.classList.add('form')
-
-          button_1.classList.add('btn_closeModal')
-          button_2.classList.add('btn_enter')
-
-
-          h1_1.classList.add('title')
-          h1_2.classList.add('text')
-
+        
           input_1.setAttribute('id','email')
           input_1.setAttribute('type','email')
           input_1.setAttribute('autocomplete','email')
           input_1.setAttribute('placeholder','Seu e-mail')
-
           input_2.setAttribute('id','pass')
           input_2.setAttribute('type','password')
           input_2.setAttribute('autocomplete','current-password')
           input_2.setAttribute('placeholder','Sua senha')
 
-          h1_1.innerText = 'Login'
-          button_2.innerText = 'Entrar'
-          h1_2.innerHTML = `Não tem cadastro?  <span class="register">Clique aqui</span>  para se cadastrar.`
-
           div_1.append(div_2, form, div_3)
           div_2.appendChild(button_1)
-          button_1.appendChild(i)
           form.append(h1_1, input_1, input_2, button_2, h1_2)
-          
-          modal.innerHTML = ''
+          button_1.appendChild(i)
+         
+          modalClean()
           modal.appendChild(div_1)
 
           closeModal()
           ShowModal(modal)
           logInto()
-          // navForProfile()
           redirectRegister()
      })   
-     
 }
 
 function redirectLogin(){
@@ -102,7 +80,7 @@ function modalRegister(){
     
 
      btn_open.addEventListener('click',()=>{
-          let div_1 = document.createElement('div')
+          let div_1 = createElementWithClass('div','modal__div','','')
           let div_2 = document.createElement('div')
           let div_3 = document.createElement('div')
           let form = document.createElement('form')
@@ -116,7 +94,6 @@ function modalRegister(){
           let button_2 = document.createElement('button')
           let i = document.createElement('i')
           
-          div_1.classList.add('modal__div')
           div_2.classList.add('box_top')
           div_3.classList.add('box_bottom')
 
@@ -158,7 +135,7 @@ function modalRegister(){
           button_1.appendChild(i)
           form.append(h1_1, input_1, input_2, input_3, input_4, button_2, h1_2)
           
-          modal.innerHTML = ''
+          modalClean()
           modal.appendChild(div_1)
 
           closeModal()
@@ -200,6 +177,12 @@ function logInto() {
           modal.close()
 
      })
+}
+
+function modalClean(){
+     const modal= document.querySelector('.modal')
+     modal.innerHTML = ''
+
 }
 
 function register(){
@@ -255,6 +238,17 @@ async function modButton(){
                logout()
           })
      }
+}
+
+function createElementWithClass( elem, classe, id ,inner ){
+
+     let elemento = document.createElement(`${elem}`)
+     elemento.classList = `${classe}`
+     elemento.setAttribute('id',`${id}`)
+     elemento.innerHTML = `${inner}` 
+    
+     return elemento  
+   
 }
 
 
