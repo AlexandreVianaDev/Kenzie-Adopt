@@ -5,8 +5,6 @@ export function logout(){
      window.location.replace('/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html')
 }
 
-
-
 function modalLogin(){
      const modal= document.querySelector('.modal')
      const btn_open = document.querySelector('.btn_login')
@@ -81,31 +79,18 @@ function modalRegister(){
 
      btn_open.addEventListener('click',()=>{
           let div_1 = createElementWithClass('div','modal__div','','')
-          let div_2 = document.createElement('div')
-          let div_3 = document.createElement('div')
-          let form = document.createElement('form')
-          let h1_1 = document.createElement('h1')
-          let h1_2 = document.createElement('h1')
+          let div_2 = createElementWithClass('div','box_top','','')
+          let div_3 = createElementWithClass('div','box_bottom','','')
+          let form = createElementWithClass('form','form','','')
+          let h1_1 = createElementWithClass('h1','title','','Cadastrar')
+          let h1_2 = createElementWithClass('h1','text','','Já tem cadastro?  <span class="login">Clique aqui</span>')
           let input_1 = document.createElement('input')
           let input_2 = document.createElement('input')
           let input_3 = document.createElement('input')
           let input_4 = document.createElement('input')
-          let button_1 = document.createElement('button')
-          let button_2 = document.createElement('button')
-          let i = document.createElement('i')
-          
-          div_2.classList.add('box_top')
-          div_3.classList.add('box_bottom')
-
-          i.classList = 'fa-regular fa-circle-xmark'
-          form.classList.add('form')
-
-          button_1.classList.add('btn_closeModal')
-          button_2.classList.add('btn_regis')
-
-
-          h1_1.classList.add('title')
-          h1_2.classList.add('text')
+          let button_1 = createElementWithClass('button','btn_closeModal','','')
+          let button_2 = createElementWithClass('button','btn_regis','','Cadastrar')
+          let i = createElementWithClass('i','fa-regular fa-circle-xmark','','')
 
           input_1.setAttribute('id','name')
           input_1.setAttribute('type','name')
@@ -126,10 +111,6 @@ function modalRegister(){
           input_4.setAttribute('type','url')
           input_4.setAttribute('placeholder','Seu avatar')
 
-          h1_1.innerText = 'Cadastrar'
-          button_2.innerText = 'Cadastrar'
-          h1_2.innerHTML = `Já tem cadastro?  <span class="login">Clique aqui</span>.`
-
           div_1.append(div_2, form, div_3)
           div_2.appendChild(button_1)
           button_1.appendChild(i)
@@ -141,8 +122,7 @@ function modalRegister(){
           closeModal()
           ShowModal(modal)
           register()
-          redirectLogin()
-          
+          redirectLogin()     
      })
 
 }

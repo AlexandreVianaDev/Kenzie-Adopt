@@ -1,4 +1,4 @@
-import { getAllMyPets, deleteAccount, getProfileInfos, updateUser, registerPet } from "./requests.js"
+import { getAllMyPets, deleteAccount, getProfileInfos, updateUser, registerPet, getMypet } from "./requests.js"
 
 async function renderAllMyPets() {
     const pets = await getAllMyPets()
@@ -47,10 +47,10 @@ async function renderAllMyPets() {
 
         let updateBtn = document.createElement("button")
         updateBtn.innerText = "Atualizar"
+        updateBtn.setAttribute('data-id',`${pet.id}`)
         updateBtn.classList.add("button-purple")
         updateBtn.addEventListener("click", (event) => {
             event.preventDefault()
-            console.log(event.target)
             // chama função que abre modal de atualizar pet
         })
 
@@ -59,6 +59,7 @@ async function renderAllMyPets() {
 
         ulCardList.appendChild(liItem)
     })
+    updatePet()
     
 }
 
@@ -114,7 +115,6 @@ async function renderProfile() {
     const emailSpan = document.querySelector("#profile__email")
     emailSpan.innerText = `${email}`
     
-    console.log(profile)
     buttonLogout()
     buttonHome()
 }
@@ -136,7 +136,7 @@ function acessControl(){
     if(!token)
         window.location.href = '../../index.html'
     else
-    console.log('logado')
+    console.log('')
 }
 
 function buttonLogout(){
@@ -295,7 +295,59 @@ function prepareBtnDeleteProfile() {
     })
 }
 
-function register(params) {
+function updatePet(){
+    let buttons = document.querySelectorAll('[data-id]')
+    let idDog = ''
+    buttons.forEach( button =>{
+        button.addEventListener('click',(e)=>{
+            let name = e.srcElement.parentElement.children[0].childNodes[0].childNodes[1].data
+           idDog = e.srcElement.dataset.id
+        //    getMypet(idDog)
+
+        // Abrir modal
+            let div_1 = document.querySelector('.modal')
+            let div_2 = createElementWithClass('div','box_top','','')
+            let div_3 = createElementWithClass('div','box_bottom','','')
+            let form = createElementWithClass('form','form','','')
+            let h1 = createElementWithClass('h1','title','','Atualziar')
+            let input = document.createElement('input')
+            let button_1 = createElementWithClass('button','btn_closeModal','','')
+            let button_2 = createElementWithClass('button','btn_regis','','Cadastrar')
+            let i = createElementWithClass('i','fa-regular fa-circle-xmark','','')
+
+            input.setAttribute('id','avatar')
+            input.setAttribute('type','url')
+            input.setAttribute('autocomplete','name')
+            input.setAttribute('placeholder','Avatar')
+
+            div_1.append(div_2, form, div_3)
+            div_2.appendChild(button_1)
+            button_1.appendChild(i)
+            form.append(h1, input, button_1, button_2)
+            ShowModal(div_1)
+
+        // Coletar dado
+            button_2.addEventListener('click',(e)=>{
+                e.preventDefault()
+                let data = {
+                        "name": `${name}`,
+                        "bread": "SRD",
+                        "species": "Cachorro",
+                        "avatar_url": `${input.value}`
+        
+                }
+                getMypet(data)
+            })
+          
+        })
+    })
+    console.log(buttons)
+}
+
+function ShowModal(Modal){
+    Modal.showModal()
+}
+function register() {
     const button = document.querySelector('.btn_enter')
     let name = document.querySelector('#name')
     let breed = document.querySelector('#breed')
@@ -313,6 +365,7 @@ function register(params) {
     })
 
 }
+
 function closeModal(){
     const button = document.querySelector('.btn_closeModal')
     const modal = document.querySelector('.modal')
@@ -322,6 +375,19 @@ function closeModal(){
         modal.close()
     })
 }
+
+function createElementWithClass( elem, classe, id ,inner ){
+
+    let elemento = document.createElement(`${elem}`)
+    elemento.classList = `${classe}`
+    elemento.setAttribute('id',`${id}`)
+    elemento.innerHTML = `${inner}` 
+   
+    return elemento  
+  
+}
+
+
 acessControl()
 start()
 modalRegisterpet()

@@ -62,7 +62,6 @@ async function showPets(){
         headers: headers
     });
     const petsNamesJSON = await petsNames.json();
-    console.log(petsNamesJSON)
     
     const ul = document.querySelector('#petsCards');
     ul.classList.add('cardsAdoption')
@@ -128,7 +127,7 @@ export async function registerPet(data){
     } else {
         callToastify("Pet cadastrado com sucesso", green)
         setTimeout(()=>{
-            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/index.html")
+            window.location.replace("/ProjetoGrupo/m2-projeto-em-equipe_Bruno120Ab/src/pages/profile.html")
         },2000)
     }
 
@@ -212,4 +211,20 @@ export async function updateUser(data) {
     }
 
     return userJSON
+}
+
+export async function getMypet(data){
+    const pets = await fetch(`${baseURL}/pets`, {
+        method: "PATCH",
+        headers: headers,
+        body:JSON.stringify(data)
+    })
+
+    const petsJSON = pets.json()
+
+    if(!pets.ok) {
+        callToastify("Erro ao requisitar meus pets", red)
+    } 
+
+    return petsJSON
 }
