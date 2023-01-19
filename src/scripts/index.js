@@ -1,4 +1,4 @@
-import { loginUser, getUser, token, registerUser } from "./requests.js"
+import { loginUser, getUser, token, registerUser, showPets } from "./requests.js"
 
 export function logout(){
      localStorage.clear()
@@ -264,3 +264,4 @@ checkToken()
 modalLogin()
 modalRegister()
 modButton()
+showPets()

@@ -56,7 +56,7 @@ export async function loginUser(data){
     return userLogin
 }
 
-async function showPets(){
+export async function showPets(){
     const petsNames = await fetch(`${baseURL}/pets`, {
         method: "GET",
         headers: headers
@@ -65,6 +65,7 @@ async function showPets(){
     console.log(petsNamesJSON)
     
     const ul = document.querySelector('#petsCards');
+    console.log(ul)
     ul.classList.add('cardsAdoption')
     
     petsNamesJSON.forEach(pet => {
@@ -91,7 +92,6 @@ async function showPets(){
         }
     });
 }
-showPets();
 
 export async function registerUser(data){
     const user = await fetch(`${baseURL}/users`, {
