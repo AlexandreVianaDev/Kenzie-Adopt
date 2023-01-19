@@ -133,7 +133,7 @@ function acessControl(){
 
     if(!token){
         // window.location.href = '../../index.html'
-        window.location.replace("/")
+        window.location.replace("/index.html")
     }
 }
 
@@ -142,7 +142,7 @@ function buttonLogout(){
 
     button.addEventListener('click',()=>{
         localStorage.clear()
-        window.location.replace('/')
+        window.location.replace('/index.html')
     })
 }
 
@@ -150,7 +150,7 @@ function buttonHome(){
     const button = document.querySelector('#btn_home')
 
     button.addEventListener('click',()=>{
-        window.location.replace('/')
+        window.location.replace('/index.html')
     })
 }
 // Vou construir uma função logout
