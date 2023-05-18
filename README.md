@@ -22,5 +22,7 @@ Projeto em grupo realizado na Kenzie Academy Brasil onde é possível adotar pet
 
 # 🛠️ Abrir e rodar o projeto
 
+Para rodar o projeto clone e rode a API local e depois acesse a página do projeto.
+
 API local: https://github.com/Kenzie-Academy-Brasil-Developers/kenzie-adopt
 DOC da API: https://kenzie-academy-brasil-developers.github.io/kenzie-adopt-doc/
